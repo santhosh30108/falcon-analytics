@@ -36,11 +36,6 @@ export default function AlertCard({ alert }) {
             </span>
           </div>
         </div>
-        {alert.actionRequired && (
-          <button className="text-xs font-medium text-primary-600 hover:text-primary-700 whitespace-nowrap">
-            View Details →
-          </button>
-        )}
       </div>
     </div>
   );
