@@ -29,17 +29,17 @@ export default function RecommendationCard({ recommendation }) {
       {/* Question Distribution */}
       <div className="mb-4">
         <p className="text-xs font-medium text-gray-700 mb-2">Suggested Question Distribution:</p>
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-success-50 rounded-lg p-3 text-center">
-            <div className="text-2xl font-bold text-success-700">{recommendation.questions.easy}</div>
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          <div className="bg-success-50 rounded-lg p-2 sm:p-3 text-center">
+            <div className="text-lg sm:text-xl md:text-2xl font-bold text-success-700">{recommendation.questions.easy}</div>
             <div className="text-xs text-success-600 mt-1">Easy</div>
           </div>
-          <div className="bg-warning-50 rounded-lg p-3 text-center">
-            <div className="text-2xl font-bold text-warning-700">{recommendation.questions.medium}</div>
+          <div className="bg-warning-50 rounded-lg p-2 sm:p-3 text-center">
+            <div className="text-lg sm:text-xl md:text-2xl font-bold text-warning-700">{recommendation.questions.medium}</div>
             <div className="text-xs text-warning-600 mt-1">Medium</div>
           </div>
-          <div className="bg-danger-50 rounded-lg p-3 text-center">
-            <div className="text-2xl font-bold text-danger-700">{recommendation.questions.hard}</div>
+          <div className="bg-danger-50 rounded-lg p-2 sm:p-3 text-center">
+            <div className="text-lg sm:text-xl md:text-2xl font-bold text-danger-700">{recommendation.questions.hard}</div>
             <div className="text-xs text-danger-600 mt-1">Hard</div>
           </div>
         </div>

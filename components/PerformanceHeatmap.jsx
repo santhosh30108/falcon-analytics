@@ -14,14 +14,14 @@ export default function PerformanceHeatmap({ data, title }) {
   return (
     <div className="card">
       <h3 className="subsection-title">{title}</h3>
-      <div className="grid grid-cols-4 gap-3 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-4">
         {data.map((item, index) => (
           <div
             key={index}
             className={`${getColorClass(item.accuracy)} ${getTextColorClass(item.accuracy)} p-4 rounded-lg transition-all duration-200 cursor-pointer group relative`}
           >
             <div className="text-xs font-medium opacity-90">{item.chapter}</div>
-            <div className="text-2xl font-bold mt-1">{formatPercentage(item.accuracy)}</div>
+            <div className="text-lg sm:text-xl md:text-2xl font-bold mt-1">{formatPercentage(item.accuracy)}</div>
             <div className="text-xs opacity-75 mt-1">{item.subject}</div>
             
             {/* Tooltip */}

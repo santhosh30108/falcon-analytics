@@ -50,12 +50,14 @@ export default function ProfilePage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Faculty Profile</h1>
-          <p className="text-gray-600 mt-2">View and manage your profile information</p>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Faculty Profile</h1>
+          <p className="text-xs sm:text-sm md:text-base text-gray-600 mt-1 sm:mt-2">
+            View and manage your profile information
+          </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           {!isEditing ? (
             <>
               <button
@@ -96,9 +98,9 @@ export default function ProfilePage() {
 
       {/* Profile Card */}
       <div className="card">
-        <div className="flex items-start gap-6">
+        <div className="flex flex-col md:flex-row items-start gap-6">
           {/* Avatar */}
-          <div className="w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white text-4xl font-bold">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white text-2xl sm:text-3xl md:text-4xl font-bold">
             {(isEditing ? editedData.name : facultyData.name).split(' ').map(n => n[0]).join('')}
           </div>
 
@@ -127,13 +129,13 @@ export default function ProfilePage() {
               </div>
             ) : (
               <>
-                <h2 className="text-2xl font-bold text-gray-900">{facultyData.name}</h2>
-                <p className="text-lg text-primary-600 font-medium mt-1">{facultyData.subject} Faculty</p>
-                <p className="text-gray-600 mt-1">{facultyData.qualification}</p>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{facultyData.name}</h2>
+                <p className="text-sm sm:text-base md:text-lg text-primary-600 font-medium mt-1">{facultyData.subject} Faculty</p>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 mt-1">{facultyData.qualification}</p>
               </>
             )}
             
-            <div className="grid grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
               <div className="flex items-center gap-3">
                 <Mail className="text-primary-600" size={20} />
                 <div className="flex-1">
@@ -195,7 +197,7 @@ export default function ProfilePage() {
       </div>
 
       {/* Professional Details */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="card">
           <h3 className="subsection-title">Professional Information</h3>
           <div className="space-y-4 mt-4">
@@ -239,17 +241,17 @@ export default function ProfilePage() {
               <div className="flex items-center gap-3">
                 <Award className="text-primary-600" size={24} />
                 <div>
-                  <p className="text-2xl font-bold text-primary-700">{facultyData.batchesHandled}</p>
-                  <p className="text-sm text-primary-600">Batches Handled</p>
+                  <p className="text-xl sm:text-2xl font-bold text-primary-700">{facultyData.batchesHandled}</p>
+                  <p className="text-xs sm:text-sm text-primary-600">Batches Handled</p>
                 </div>
               </div>
             </div>
-            <div className="p-4 bg-gradient-to-br from-success-50 to-success-100 rounded-lg">
-              <div className="flex items-center gap-3">
-                <User className="text-success-600" size={24} />
+            <div className="p-3 sm:p-4 bg-gradient-to-br from-success-50 to-success-100 rounded-lg">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <User className="text-success-600 w-5 h-5 sm:w-6 sm:h-6" />
                 <div>
-                  <p className="text-2xl font-bold text-success-700">{facultyData.studentsImpacted}</p>
-                  <p className="text-sm text-success-600">Students Impacted</p>
+                  <p className="text-xl sm:text-2xl font-bold text-success-700">{facultyData.studentsImpacted}</p>
+                  <p className="text-xs sm:text-sm text-success-600">Students Impacted</p>
                 </div>
               </div>
             </div>

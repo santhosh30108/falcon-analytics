@@ -21,10 +21,10 @@ export default function AlertCard({ alert }) {
 
   return (
     <div className={`border-l-4 p-4 rounded-r-lg ${colorClasses[alert.type]}`}>
-      <div className="flex items-start gap-3">
-        <span className="text-2xl">{getAlertIcon(alert.type)}</span>
-        <div className="flex-1">
-          <p className={`font-medium ${textColorClasses[alert.type]}`}>
+      <div className="flex items-start gap-2 sm:gap-3">
+        <span className="text-xl sm:text-2xl flex-shrink-0">{getAlertIcon(alert.type)}</span>
+        <div className="flex-1 min-w-0">
+          <p className={`text-sm sm:text-base font-medium ${textColorClasses[alert.type]}`}>
             {alert.message}
           </p>
           <div className="flex items-center gap-2 mt-2">

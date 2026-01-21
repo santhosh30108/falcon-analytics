@@ -22,20 +22,6 @@ export const chapterPerformance = [
   { subject: 'Physics', chapter: 'Work Energy Power', accuracy: 69.2, avgScore: 17.3, totalQuestions: 25, difficulty: 'Medium', trend: 4, weightage: 'Medium' },
   { subject: 'Physics', chapter: 'Rotational Motion', accuracy: 61.4, avgScore: 15.4, totalQuestions: 25, difficulty: 'Hard', trend: -5, weightage: 'Medium' },
   { subject: 'Physics', chapter: 'Gravitation', accuracy: 73.6, avgScore: 18.4, totalQuestions: 25, difficulty: 'Easy', trend: 8, weightage: 'Low' },
-  
-  // Chemistry
-  { subject: 'Chemistry', chapter: 'Chemical Bonding', accuracy: 76.4, avgScore: 19.1, totalQuestions: 25, difficulty: 'Medium', trend: 6, weightage: 'High' },
-  { subject: 'Chemistry', chapter: 'Thermodynamics', accuracy: 63.8, avgScore: 16.0, totalQuestions: 25, difficulty: 'Hard', trend: -4, weightage: 'High' },
-  { subject: 'Chemistry', chapter: 'Organic Chemistry', accuracy: 59.3, avgScore: 14.8, totalQuestions: 25, difficulty: 'Hard', trend: -12, weightage: 'High' },
-  { subject: 'Chemistry', chapter: 'Electrochemistry', accuracy: 71.9, avgScore: 18.0, totalQuestions: 25, difficulty: 'Medium', trend: 7, weightage: 'Medium' },
-  { subject: 'Chemistry', chapter: 'Chemical Kinetics', accuracy: 68.5, avgScore: 17.1, totalQuestions: 25, difficulty: 'Medium', trend: 2, weightage: 'Medium' },
-  
-  // Mathematics
-  { subject: 'Mathematics', chapter: 'Calculus', accuracy: 64.2, avgScore: 16.1, totalQuestions: 25, difficulty: 'Hard', trend: -6, weightage: 'High' },
-  { subject: 'Mathematics', chapter: 'Algebra', accuracy: 72.8, avgScore: 18.2, totalQuestions: 25, difficulty: 'Medium', trend: 9, weightage: 'High' },
-  { subject: 'Mathematics', chapter: 'Trigonometry', accuracy: 69.7, avgScore: 17.4, totalQuestions: 25, difficulty: 'Medium', trend: 3, weightage: 'High' },
-  { subject: 'Mathematics', chapter: 'Coordinate Geometry', accuracy: 66.3, avgScore: 16.6, totalQuestions: 25, difficulty: 'Medium', trend: -2, weightage: 'Medium' },
-  { subject: 'Mathematics', chapter: 'Probability', accuracy: 74.5, avgScore: 18.6, totalQuestions: 25, difficulty: 'Easy', trend: 11, weightage: 'Medium' },
 ];
 
 export const topicBreakdown = {
@@ -81,62 +67,6 @@ export const topicBreakdown = {
     { topic: 'Gravitational Field', accuracy: 76.4, avgScore: 7.6, difficulty: 'Easy', trend: 9, questions: 9 },
     { topic: 'Orbital Motion', accuracy: 71.2, avgScore: 7.1, difficulty: 'Medium', trend: 7, questions: 8 },
     { topic: 'Kepler\'s Laws', accuracy: 73.1, avgScore: 7.3, difficulty: 'Easy', trend: 8, questions: 8 },
-  ],
-  
-  // Chemistry
-  'Chemical Bonding': [
-    { topic: 'Ionic Bonding', accuracy: 79.3, avgScore: 7.9, difficulty: 'Easy', trend: 8, questions: 8 },
-    { topic: 'Covalent Bonding', accuracy: 75.1, avgScore: 7.5, difficulty: 'Medium', trend: 5, questions: 9 },
-    { topic: 'Molecular Geometry', accuracy: 74.8, avgScore: 7.5, difficulty: 'Medium', trend: 6, questions: 8 },
-  ],
-  'Thermodynamics': [
-    { topic: 'First Law', accuracy: 67.2, avgScore: 6.7, difficulty: 'Medium', trend: -2, questions: 8 },
-    { topic: 'Enthalpy', accuracy: 61.5, avgScore: 6.2, difficulty: 'Hard', trend: -5, questions: 9 },
-    { topic: 'Entropy', accuracy: 62.7, avgScore: 6.3, difficulty: 'Hard', trend: -4, questions: 8 },
-  ],
-  'Organic Chemistry': [
-    { topic: 'Nomenclature', accuracy: 71.2, avgScore: 7.1, difficulty: 'Easy', trend: 5, questions: 10 },
-    { topic: 'Reaction Mechanisms', accuracy: 45.8, avgScore: 4.6, difficulty: 'Hard', trend: -20, questions: 12 },
-    { topic: 'Isomerism', accuracy: 62.4, avgScore: 6.2, difficulty: 'Medium', trend: -8, questions: 8 },
-    { topic: 'Functional Groups', accuracy: 58.7, avgScore: 5.9, difficulty: 'Medium', trend: -14, questions: 10 },
-  ],
-  'Electrochemistry': [
-    { topic: 'Redox Reactions', accuracy: 74.3, avgScore: 7.4, difficulty: 'Medium', trend: 8, questions: 9 },
-    { topic: 'Electrochemical Cells', accuracy: 70.2, avgScore: 7.0, difficulty: 'Medium', trend: 6, questions: 8 },
-    { topic: 'Nernst Equation', accuracy: 71.1, avgScore: 7.1, difficulty: 'Hard', trend: 7, questions: 8 },
-  ],
-  'Chemical Kinetics': [
-    { topic: 'Rate Laws', accuracy: 70.8, avgScore: 7.1, difficulty: 'Medium', trend: 3, questions: 9 },
-    { topic: 'Reaction Mechanisms', accuracy: 66.5, avgScore: 6.7, difficulty: 'Hard', trend: 1, questions: 8 },
-    { topic: 'Catalysis', accuracy: 68.2, avgScore: 6.8, difficulty: 'Medium', trend: 2, questions: 8 },
-  ],
-  
-  // Mathematics
-  'Calculus': [
-    { topic: 'Limits', accuracy: 72.5, avgScore: 7.3, difficulty: 'Easy', trend: 8, questions: 10 },
-    { topic: 'Derivatives', accuracy: 63.8, avgScore: 6.4, difficulty: 'Medium', trend: -3, questions: 12 },
-    { topic: 'Integration', accuracy: 58.2, avgScore: 5.8, difficulty: 'Hard', trend: -12, questions: 13 },
-    { topic: 'Applications', accuracy: 61.7, avgScore: 6.2, difficulty: 'Medium', trend: -5, questions: 10 },
-  ],
-  'Algebra': [
-    { topic: 'Quadratic Equations', accuracy: 76.4, avgScore: 7.6, difficulty: 'Easy', trend: 11, questions: 9 },
-    { topic: 'Complex Numbers', accuracy: 70.1, avgScore: 7.0, difficulty: 'Medium', trend: 8, questions: 8 },
-    { topic: 'Sequences & Series', accuracy: 71.9, avgScore: 7.2, difficulty: 'Medium', trend: 9, questions: 8 },
-  ],
-  'Trigonometry': [
-    { topic: 'Trigonometric Ratios', accuracy: 73.2, avgScore: 7.3, difficulty: 'Easy', trend: 5, questions: 9 },
-    { topic: 'Trigonometric Identities', accuracy: 67.8, avgScore: 6.8, difficulty: 'Medium', trend: 2, questions: 8 },
-    { topic: 'Inverse Functions', accuracy: 68.1, avgScore: 6.8, difficulty: 'Medium', trend: 3, questions: 8 },
-  ],
-  'Coordinate Geometry': [
-    { topic: 'Straight Lines', accuracy: 70.2, avgScore: 7.0, difficulty: 'Easy', trend: 1, questions: 9 },
-    { topic: 'Circles', accuracy: 64.1, avgScore: 6.4, difficulty: 'Medium', trend: -4, questions: 8 },
-    { topic: 'Conic Sections', accuracy: 64.7, avgScore: 6.5, difficulty: 'Hard', trend: -3, questions: 8 },
-  ],
-  'Probability': [
-    { topic: 'Basic Probability', accuracy: 78.3, avgScore: 7.8, difficulty: 'Easy', trend: 13, questions: 9 },
-    { topic: 'Conditional Probability', accuracy: 72.1, avgScore: 7.2, difficulty: 'Medium', trend: 10, questions: 8 },
-    { topic: 'Distributions', accuracy: 73.2, avgScore: 7.3, difficulty: 'Medium', trend: 11, questions: 8 },
   ],
 };
 
@@ -231,19 +161,6 @@ export const testRecommendations = [
     },
     topics: ['Kinematics', 'Electrostatics', 'Rotational Motion']
   },
-  {
-    id: 4,
-    title: 'Balance Organic Chemistry Difficulty',
-    description: 'Adjust difficulty distribution: 40% Easy, 40% Medium, 20% Hard',
-    reason: 'Current distribution too hard. Students struggling with reaction mechanisms.',
-    impact: 'High',
-    questions: {
-      easy: 4,
-      medium: 4,
-      hard: 2
-    },
-    topics: ['Nomenclature', 'Functional Groups', 'Isomerism', 'Reaction Mechanisms']
-  },
 ];
 
 export const teachingPriorities = [
@@ -279,36 +196,6 @@ export const teachingPriorities = [
   },
   {
     id: 3,
-    topic: 'Organic Chemistry - Reaction Mechanisms',
-    subject: 'Chemistry',
-    priority: 'Urgent',
-    reason: 'Only 45.8% accuracy, critical for organic chemistry',
-    estimatedHours: 5,
-    tags: ['High Impact', 'Urgent'],
-    weekNumber: 1,
-    suggestedActivities: [
-      'Step-by-step mechanism breakdown',
-      'Electron movement practice',
-      'Pattern recognition exercises'
-    ]
-  },
-  {
-    id: 4,
-    topic: 'Calculus - Integration',
-    subject: 'Mathematics',
-    priority: 'High',
-    reason: '58.2% accuracy, high weightage in JEE',
-    estimatedHours: 4,
-    tags: ['High Impact', 'Revision Needed'],
-    weekNumber: 2,
-    suggestedActivities: [
-      'Formula revision',
-      'Substitution techniques',
-      'Application problems'
-    ]
-  },
-  {
-    id: 5,
     topic: 'Electrostatics - Capacitors',
     subject: 'Physics',
     priority: 'High',
@@ -358,14 +245,6 @@ export const alerts = [
   },
   {
     id: 3,
-    type: 'warning',
-    message: 'Organic Chemistry reaction mechanisms showing 45.8% accuracy',
-    subject: 'Chemistry',
-    chapter: 'Organic Chemistry',
-    actionRequired: true
-  },
-  {
-    id: 4,
     type: 'info',
     message: 'Laws of Motion showing strong improvement (+12%)',
     subject: 'Physics',
@@ -373,11 +252,11 @@ export const alerts = [
     actionRequired: false
   },
   {
-    id: 5,
+    id: 4,
     type: 'info',
-    message: 'Probability performance excellent (74.5% accuracy)',
-    subject: 'Mathematics',
-    chapter: 'Probability',
+    message: 'Gravitation performance excellent (73.6% accuracy)',
+    subject: 'Physics',
+    chapter: 'Gravitation',
     actionRequired: false
   },
 ];
@@ -399,18 +278,18 @@ export const chatResponses = {
       { question: 'Gauss Law application in non-uniform fields', accuracy: 32.4, type: 'Multi-step' },
       { question: 'Projectile motion with air resistance', accuracy: 35.8, type: 'Numerical' },
       { question: 'Capacitor network with mixed connections', accuracy: 38.2, type: 'Multi-step' },
-      { question: 'Organic reaction mechanism prediction', accuracy: 39.7, type: 'Conceptual' },
-      { question: 'Integration by parts (complex)', accuracy: 41.3, type: 'Multi-step' },
+      { question: 'Rotational motion with angular momentum conservation', accuracy: 39.7, type: 'Multi-step' },
+      { question: 'Magnetic field due to current carrying wire', accuracy: 41.3, type: 'Multi-step' },
     ]
   },
   'improvement areas': {
     answer: 'Key areas showing improvement:',
     data: [
       { topic: 'Laws of Motion', improvement: 12, currentAccuracy: 78.5 },
-      { topic: 'Probability', improvement: 11, currentAccuracy: 74.5 },
-      { topic: 'Algebra', improvement: 9, currentAccuracy: 72.8 },
+      { topic: 'Current Electricity', improvement: 5, currentAccuracy: 71.3 },
       { topic: 'Gravitation', improvement: 8, currentAccuracy: 73.6 },
-      { topic: 'Limits (Calculus)', improvement: 8, currentAccuracy: 72.5 },
+      { topic: 'Work Energy Power', improvement: 4, currentAccuracy: 69.2 },
+      { topic: 'Magnetism', improvement: -3, currentAccuracy: 65.7 },
     ]
   },
 };

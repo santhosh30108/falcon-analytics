@@ -8,12 +8,14 @@ export default function Home() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Faculty Dashboard</h1>
-        <p className="text-gray-600 mt-2">Welcome back, Dr. Rajesh Kumar • Physics Faculty</p>
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Faculty Dashboard</h1>
+        <p className="text-xs sm:text-sm md:text-base text-gray-600 mt-1 sm:mt-2">
+          Welcome back, Dr. Rajesh Kumar • Physics Faculty
+        </p>
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
         <MetricCard
           label="Total Students"
           value={batchOverview.totalStudents}
@@ -59,7 +61,7 @@ export default function Home() {
       />
 
       {/* Quick Insights */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="card">
           <h3 className="subsection-title">Top Performing Chapters</h3>
           <div className="space-y-3 mt-4">
@@ -73,7 +75,7 @@ export default function Home() {
                     <p className="text-xs text-gray-500">{chapter.subject}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-bold text-success-700">{chapter.accuracy.toFixed(1)}%</p>
+                    <p className="text-base sm:text-lg font-bold text-success-700">{chapter.accuracy.toFixed(1)}%</p>
                     <p className="text-xs text-success-600">↑ {chapter.trend}%</p>
                   </div>
                 </div>
@@ -95,7 +97,7 @@ export default function Home() {
                     <p className="text-xs text-gray-500">{chapter.subject}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-bold text-danger-700">{chapter.accuracy.toFixed(1)}%</p>
+                    <p className="text-base sm:text-lg font-bold text-danger-700">{chapter.accuracy.toFixed(1)}%</p>
                     <p className="text-xs text-danger-600">↓ {Math.abs(chapter.trend)}%</p>
                   </div>
                 </div>

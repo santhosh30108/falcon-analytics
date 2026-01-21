@@ -63,7 +63,7 @@ export default function QuestionTypeBreakdown({ data }) {
                 <p className="text-sm text-gray-500 mt-1">{item.totalQuestions} questions analyzed</p>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold text-gray-900">{formatPercentage(item.accuracy)}</div>
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{formatPercentage(item.accuracy)}</div>
                 <div className="text-xs text-gray-500">Accuracy</div>
               </div>
             </div>

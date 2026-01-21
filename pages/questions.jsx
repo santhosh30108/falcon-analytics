@@ -6,8 +6,12 @@ export default function QuestionsPage() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Question-Type & Error Analysis</h1>
-        <p className="text-gray-600 mt-2">Understanding student performance patterns and common mistakes</p>
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+          Question-Type & Error Analysis
+        </h1>
+        <p className="text-xs sm:text-sm md:text-base text-gray-600 mt-1 sm:mt-2">
+          Understanding student performance patterns and common mistakes
+        </p>
       </div>
 
       {/* Question Type Breakdown */}
@@ -43,7 +47,7 @@ export default function QuestionsPage() {
       {/* Recommended Actions */}
       <div className="card">
         <h3 className="subsection-title">Recommended Teaching Actions</h3>
-        <div className="grid grid-cols-2 gap-4 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-5 rounded-lg">
             <h4 className="font-semibold text-gray-900 mb-2">For Multi-step Problems</h4>
             <ul className="space-y-2 text-sm text-gray-700">

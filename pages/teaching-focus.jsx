@@ -61,29 +61,33 @@ export default function TeachingFocusPage() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Teaching Focus Planner</h1>
-        <p className="text-gray-600 mt-2">Prioritized topics based on student performance data</p>
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+          Teaching Focus Planner
+        </h1>
+        <p className="text-xs sm:text-sm md:text-base text-gray-600 mt-1 sm:mt-2">
+          Prioritized topics based on student performance data
+        </p>
       </div>
 
       {/* Summary */}
       <div className="card gradient-bg">
         <h3 className="subsection-title">Focus Areas Overview</h3>
-        <div className="grid grid-cols-3 gap-6 mt-4">
-          <div className="bg-white rounded-lg p-4 text-center">
-            <div className="text-3xl font-bold text-gray-900">{teachingPriorities.length}</div>
-            <div className="text-sm text-gray-600 mt-1">Total Focus Areas</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-4">
+          <div className="bg-white rounded-lg p-3 sm:p-4 text-center">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">{teachingPriorities.length}</div>
+            <div className="text-xs sm:text-sm text-gray-600 mt-1">Total Focus Areas</div>
           </div>
-          <div className="bg-white rounded-lg p-4 text-center">
-            <div className="text-3xl font-bold text-danger-700">
+          <div className="bg-white rounded-lg p-3 sm:p-4 text-center">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-danger-700">
               {teachingPriorities.filter(p => p.priority === 'Urgent').length}
             </div>
-            <div className="text-sm text-gray-600 mt-1">Urgent Priority</div>
+            <div className="text-xs sm:text-sm text-gray-600 mt-1">Urgent Priority</div>
           </div>
-          <div className="bg-white rounded-lg p-4 text-center">
-            <div className="text-3xl font-bold text-warning-700">
+          <div className="bg-white rounded-lg p-3 sm:p-4 text-center">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-warning-700">
               {teachingPriorities.filter(p => p.priority === 'High').length}
             </div>
-            <div className="text-sm text-gray-600 mt-1">High Priority</div>
+            <div className="text-xs sm:text-sm text-gray-600 mt-1">High Priority</div>
           </div>
         </div>
       </div>
@@ -91,7 +95,7 @@ export default function TeachingFocusPage() {
       {/* Priority Topics */}
       <div>
         <h2 className="section-title">What You Should Focus On</h2>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {sortedPriorities.map((priority) => (
             <PriorityCard key={priority.id} priority={priority} />
           ))}
@@ -101,7 +105,7 @@ export default function TeachingFocusPage() {
       {/* Teaching Tips */}
       <div className="card">
         <h3 className="subsection-title">General Teaching Recommendations</h3>
-        <div className="grid grid-cols-2 gap-4 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-5 rounded-lg">
             <h4 className="font-semibold text-gray-900 mb-2">For Urgent Topics</h4>
             <ul className="space-y-2 text-sm text-gray-700">
