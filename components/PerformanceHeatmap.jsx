@@ -25,20 +25,12 @@ export default function PerformanceHeatmap({ data, title }) {
             <div className="text-xs opacity-75 mt-1">{item.subject}</div>
             
             {/* Tooltip */}
-            <div className="absolute left-0 top-full mt-2 w-64 bg-gray-900 text-white text-xs rounded-lg p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 shadow-xl">
+            <div className="absolute left-0 top-full mt-2 w-56 bg-gray-900 text-white text-xs rounded-lg p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 shadow-xl">
               <div className="font-semibold mb-2">{item.chapter}</div>
               <div className="space-y-1">
                 <div className="flex justify-between">
                   <span>Accuracy:</span>
                   <span className="font-medium">{formatPercentage(item.accuracy)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Avg Score:</span>
-                  <span className="font-medium">{item.avgScore}/{item.totalQuestions}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Difficulty:</span>
-                  <span className="font-medium">{item.difficulty}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Trend:</span>

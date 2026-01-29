@@ -2,17 +2,10 @@ import '@/styles/globals.css';
 import Sidebar from '@/components/Sidebar';
 import TopBar from '@/components/TopBar';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
 import { useState } from 'react';
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
-  const isAuthPage =
-    router.pathname === '/login' ||
-    router.pathname === '/signup' ||
-    router.pathname === '/forgot-password';
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleToggleSidebar = () => {
@@ -22,21 +15,6 @@ export default function App({ Component, pageProps }) {
   const handleCloseSidebar = () => {
     setIsSidebarOpen(false);
   };
-
-  if (isAuthPage) {
-    return (
-      <>
-        <Head>
-          <title>Falcon - Faculty Analytics & Learning Console</title>
-          <meta
-            name="description"
-            content="AI-powered analytics dashboard for competitive exam coaching institutes"
-          />
-        </Head>
-        <Component {...pageProps} />
-      </>
-    );
-  }
 
   return (
     <>
