@@ -682,14 +682,15 @@ export default function FalconPage() {
       {/* Header with Filter Dropdowns */}
       <div className="fixed top-14 sm:top-16 left-0 right-0 md:left-64 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="flex items-center justify-between h-14">
+          {/* Mobile: Stacked layout | Desktop: Inline layout */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-2 sm:py-0 sm:h-14 gap-2 sm:gap-0">
             {/* Current Tab Title + Insights Sub-Tabs */}
-            <div className="flex items-center gap-6">
-              <h1 className="text-lg font-bold text-gray-900">{getTabTitle()}</h1>
+            <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
+              <h1 className="text-base sm:text-lg font-bold text-gray-900">{getTabTitle()}</h1>
               
-              {/* Insights Sub-Tabs */}
+              {/* Insights Sub-Tabs - Hidden on mobile */}
               {activeTab === 'insights' && (
-                <nav className="flex items-center gap-1">
+                <nav className="hidden sm:flex items-center gap-1">
                   {insightSubTabs.map((subTab) => (
                     <button
                       key={subTab.id}
@@ -707,17 +708,17 @@ export default function FalconPage() {
               )}
             </div>
             
-            {/* Filter Dropdowns */}
-            <div className="flex items-center gap-2 relative z-50">
+            {/* Filter Dropdowns - Horizontally scrollable on mobile */}
+            <div className="flex items-center gap-1.5 sm:gap-2 relative z-50 overflow-x-auto pb-1 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar">
               {/* Branch Dropdown */}
-              <div className="relative">
+              <div className="relative flex-shrink-0">
                 <button
                   onClick={() => setOpenDropdown(openDropdown === 'branch' ? null : 'branch')}
                   title="Select Branch"
-                  className="flex items-center gap-2 pl-3 pr-7 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-gray-700 hover:bg-gray-100"
+                  className="flex items-center gap-1 pl-2 pr-5 sm:pl-3 sm:pr-7 py-1 sm:py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-[10px] sm:text-xs font-medium text-gray-700 hover:bg-gray-100 whitespace-nowrap"
                 >
                   {selectedBranch}
-                  <ChevronDown className={`absolute right-2 w-3 h-3 text-gray-500 transition-transform ${openDropdown === 'branch' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`absolute right-1 sm:right-2 w-2.5 sm:w-3 h-2.5 sm:h-3 text-gray-500 transition-transform ${openDropdown === 'branch' ? 'rotate-180' : ''}`} />
                 </button>
                 {openDropdown === 'branch' && (
                   <>
@@ -738,14 +739,14 @@ export default function FalconPage() {
               </div>
 
               {/* Class Dropdown */}
-              <div className="relative">
+              <div className="relative flex-shrink-0">
                 <button
                   onClick={() => setOpenDropdown(openDropdown === 'class' ? null : 'class')}
                   title="Select Class"
-                  className="flex items-center gap-2 pl-3 pr-7 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-gray-700 hover:bg-gray-100"
+                  className="flex items-center gap-1 pl-2 pr-5 sm:pl-3 sm:pr-7 py-1 sm:py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-[10px] sm:text-xs font-medium text-gray-700 hover:bg-gray-100 whitespace-nowrap"
                 >
                   Class {selectedClass}
-                  <ChevronDown className={`absolute right-2 w-3 h-3 text-gray-500 transition-transform ${openDropdown === 'class' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`absolute right-1 sm:right-2 w-2.5 sm:w-3 h-2.5 sm:h-3 text-gray-500 transition-transform ${openDropdown === 'class' ? 'rotate-180' : ''}`} />
                 </button>
                 {openDropdown === 'class' && (
                   <>
@@ -766,14 +767,14 @@ export default function FalconPage() {
               </div>
 
               {/* Batch Dropdown */}
-              <div className="relative">
+              <div className="relative flex-shrink-0">
                 <button
                   onClick={() => setOpenDropdown(openDropdown === 'batch' ? null : 'batch')}
                   title="Select Batch"
-                  className="flex items-center gap-2 pl-3 pr-7 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-gray-700 hover:bg-gray-100"
+                  className="flex items-center gap-1 pl-2 pr-5 sm:pl-3 sm:pr-7 py-1 sm:py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-[10px] sm:text-xs font-medium text-gray-700 hover:bg-gray-100 whitespace-nowrap"
                 >
                   {selectedBatch}
-                  <ChevronDown className={`absolute right-2 w-3 h-3 text-gray-500 transition-transform ${openDropdown === 'batch' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`absolute right-1 sm:right-2 w-2.5 sm:w-3 h-2.5 sm:h-3 text-gray-500 transition-transform ${openDropdown === 'batch' ? 'rotate-180' : ''}`} />
                 </button>
                 {openDropdown === 'batch' && (
                   <>
@@ -794,14 +795,14 @@ export default function FalconPage() {
               </div>
 
               {/* Subject Dropdown */}
-              <div className="relative">
+              <div className="relative flex-shrink-0">
                 <button
                   onClick={() => setOpenDropdown(openDropdown === 'subject' ? null : 'subject')}
                   title="Select Subject"
-                  className="flex items-center gap-2 pl-3 pr-7 py-1.5 bg-primary-50 border border-primary-200 rounded-lg text-xs font-medium text-primary-700 hover:bg-primary-100"
+                  className="flex items-center gap-1 pl-2 pr-5 sm:pl-3 sm:pr-7 py-1 sm:py-1.5 bg-primary-50 border border-primary-200 rounded-lg text-[10px] sm:text-xs font-medium text-primary-700 hover:bg-primary-100 whitespace-nowrap"
                 >
                   {selectedSubject}
-                  <ChevronDown className={`absolute right-2 w-3 h-3 text-primary-600 transition-transform ${openDropdown === 'subject' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`absolute right-1 sm:right-2 w-2.5 sm:w-3 h-2.5 sm:h-3 text-primary-600 transition-transform ${openDropdown === 'subject' ? 'rotate-180' : ''}`} />
                 </button>
                 {openDropdown === 'subject' && (
                   <>
@@ -826,7 +827,7 @@ export default function FalconPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="pt-14">
+      <div className="pt-20 sm:pt-14">
         {renderContent()}
       </div>
 
