@@ -24,8 +24,9 @@ export function getTrendIcon(trend) {
   return '→';
 }
 
-export function formatPercentage(value) {
-  return `${value.toFixed(1)}%`;
+export function formatPercentage(value, decimals = 1) {
+  const num = Number(value);
+  return Number.isFinite(num) ? `${num.toFixed(decimals)}%` : '—%';
 }
 
 export function formatScore(value) {
@@ -120,4 +121,11 @@ export function sortByAccuracy(data, ascending = true) {
 
 export function filterByThreshold(data, threshold, key = 'accuracy') {
   return data.filter(item => item[key] < threshold);
+}
+
+// Chart bar colors based on accuracy thresholds
+export function getBarColor(accuracy) {
+  if (accuracy >= 70) return '#22c55e'; // green
+  if (accuracy >= 55) return '#f59e0b'; // amber
+  return '#ef4444'; // red
 }

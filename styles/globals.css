@@ -83,6 +83,30 @@ body {
   .subsection-title {
     @apply text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3;
   }
+
+  /* Shimmer loading animation */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      #f1f5f9 0%,
+      #e2e8f0 20%,
+      #f8fafc 40%,
+      #e2e8f0 60%,
+      #f1f5f9 80%,
+      #e2e8f0 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* Smooth scrolling */
@@ -107,4 +131,77 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+.gemini-border-wrapper {
+  position: relative;
+  padding: 2px; /* Border thickness */
+  border-radius: 1.25rem; /* 20px */
+  box-shadow: 
+    0 10px 40px -10px rgba(139, 92, 246, 0.5),
+    0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.gemini-border-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    #2dd4bf,      /* Teal */
+    #3b82f6,      /* Blue */
+    #8b5cf6,      /* Purple */
+    #d946ef,      /* Fuschia */
+    #f43f5e,      /* Rose */
+    #f59e0b,      /* Amber */
+    #2dd4bf       /* Teal loop */
+  );
+  animation: rotate-border 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate-border {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.gemini-content {
+  position: relative;
+  background: #ffffff;
+  border-radius: calc(1.25rem - 2px);
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes gradient-xy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gemini-button {
+  background: linear-gradient(
+    45deg,
+    #2dd4bf, /* Teal */
+    #3b82f6, /* Blue */
+    #8b5cf6, /* Purple */
+    #d946ef, /* Fuschia */
+    #f43f5e, /* Rose */
+    #f59e0b, /* Amber */
+    #2dd4bf  /* Back to Teal */
+  );
+  background-size: 300% 300%;
+  animation: gradient-xy 3s ease infinite; /* Sped up slightly */
 }

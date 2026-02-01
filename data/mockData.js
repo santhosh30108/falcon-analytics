@@ -4,10 +4,34 @@
 export const facultyInfo = {
   name: 'Dr. Rajesh Kumar',
   batches: [
-    { id: 'JP001', name: 'JP001 - Jaipur Morning Batch', subject: 'Physics', students: 245 },
-    { id: 'DL301', name: 'DL301 - Delhi Evening Batch', subject: 'Physics', students: 180 },
-    { id: 'MU201', name: 'MU201 - Mumbai Weekend Batch', subject: 'Physics', students: 120 },
-    { id: 'BG101', name: 'BG101 - Bangalore Regular Batch', subject: 'Physics', students: 200 },
+    {
+      id: 'DL483',
+      name: 'DL483-0010-2024-105317',
+      subject: 'Physics',
+      students: 245,
+      averageScore: 68.5,
+      accuracyPercentage: 72.3,
+      attemptRate: 89.7,
+      trend: {
+        score: 2.3,
+        accuracy: -1.5,
+        attemptRate: 3.2
+      }
+    },
+    {
+      id: 'DL301',
+      name: 'DL483-0011-2024-105317',
+      subject: 'Botany',
+      students: 180,
+      averageScore: 74.2,
+      accuracyPercentage: 81.5,
+      attemptRate: 92.1,
+      trend: {
+        score: 1.5,
+        accuracy: 2.1,
+        attemptRate: -0.5
+      }
+    },
   ]
 };
 

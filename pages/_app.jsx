@@ -1,20 +1,21 @@
-import '@/styles/globals.css';
-import Sidebar from '@/components/Sidebar';
-import TopBar from '@/components/TopBar';
-import Head from 'next/head';
+import '@/styles/globals.css'
+import Sidebar from '@/components/layout/Sidebar'
+import TopBar from '@/components/layout/TopBar'
+import Head from 'next/head'
+import ErrorBoundary from '@/components/ErrorBoundary'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
 export default function App({ Component, pageProps }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const handleToggleSidebar = () => {
-    setIsSidebarOpen((prev) => !prev);
-  };
+    setIsSidebarOpen((prev) => !prev)
+  }
 
   const handleCloseSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+    setIsSidebarOpen(false)
+  }
 
   return (
     <>
@@ -25,19 +26,21 @@ export default function App({ Component, pageProps }) {
           content="AI-powered analytics dashboard for competitive exam coaching institutes"
         />
       </Head>
-      <div className="flex min-h-screen bg-gray-50">
-        {/* Sidebar + mobile overlay */}
-        <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
+      <ErrorBoundary>
+        <div className="flex min-h-screen bg-gray-50">
+          {/* Sidebar + mobile overlay */}
+          <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
 
-        <div className="flex-1 flex flex-col md:ml-64">
-          <TopBar onToggleSidebar={handleToggleSidebar} />
-          <main className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 pb-8">
-            <div className="max-w-7xl mx-auto w-full">
-              <Component {...pageProps} />
-            </div>
-          </main>
+          <div className="flex-1 flex flex-col md:ml-64">
+            <TopBar onToggleSidebar={handleToggleSidebar} />
+            <main className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 pb-8">
+              <div className="w-full">
+                <Component {...pageProps} />
+              </div>
+            </main>
+          </div>
         </div>
-      </div>
+      </ErrorBoundary>
     </>
-  );
+  )
 }
