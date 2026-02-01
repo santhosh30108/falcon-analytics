@@ -79,7 +79,7 @@ function InsightsTopicShimmer() {
                     ))}
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {[1, 2, 3].map((i) => (
                     <div
                         key={i}
@@ -345,7 +345,7 @@ export default function InsightsContent({
                             </div>
 
                             {/* Summary Stats */}
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                                 <div className="card text-center bg-danger-50 border border-danger-200">
                                     <div className="text-2xl font-bold text-danger-600">
                                         {strugglingTopics.length}

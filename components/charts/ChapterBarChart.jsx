@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useRef, useCallback } from 'react'
 import {
     BarChart,
     Bar,
@@ -52,6 +53,9 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function ChapterBarChart({ data }) {
+    const [activeBar, setActiveBar] = useState(null)
+    const chartRef = useRef(null)
+
     // Sort by accuracy ascending (low first, high at end).
     // Use fullName as unique category so names don't collide.
     const chartData = (data || [])
@@ -64,8 +68,20 @@ export default function ChapterBarChart({ data }) {
     // Dynamic height based on number of chapters
     const chartHeight = Math.max(300, chartData.length * 35)
 
+    // Handle bar click for mobile
+    const handleBarClick = useCallback((data, index) => {
+        setActiveBar(activeBar === index ? null : index)
+    }, [activeBar])
+
+    // Close tooltip when clicking outside
+    const handleChartClick = useCallback((state) => {
+        if (!state || !state.activePayload) {
+            setActiveBar(null)
+        }
+    }, [])
+
     return (
-        <div className="card">
+        <div className="card" ref={chartRef}>
             <h3 className="subsection-title">Chapter-wise Performance</h3>
             <p className="text-sm text-gray-500 mb-4">
                 Sorted by accuracy (low → high)
@@ -77,6 +93,7 @@ export default function ChapterBarChart({ data }) {
                         data={chartData}
                         layout="vertical"
                         margin={{ left: 20, right: 30 }}
+                        onClick={handleChartClick}
                     >
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                         <XAxis
@@ -101,22 +118,50 @@ export default function ChapterBarChart({ data }) {
                                 />
                             )}
                         />
-                        <Tooltip content={<CustomTooltip />} />
+                        <Tooltip 
+                            content={<CustomTooltip />}
+                            cursor={{ fill: 'rgba(99, 102, 241, 0.1)' }}
+                            wrapperStyle={{ outline: 'none', zIndex: 100 }}
+                        />
                         <Bar
                             dataKey="accuracy"
                             radius={[0, 4, 4, 0]}
                             barSize={20}
+                            onClick={handleBarClick}
+                            style={{ cursor: 'pointer' }}
                         >
                             {chartData.map((entry, index) => (
                                 <Cell
                                     key={entry.fullName || `cell-${index}`}
                                     fill={getBarColor(entry.accuracy)}
+                                    style={{ 
+                                        cursor: 'pointer',
+                                        outline: 'none'
+                                    }}
                                 />
                             ))}
                         </Bar>
                     </BarChart>
                 </ResponsiveContainer>
             </div>
+
+            {/* Mobile touch tooltip - shows selected bar info */}
+            {activeBar !== null && chartData[activeBar] && (
+                <div className="mt-3 p-3 bg-primary-50 border border-primary-200 rounded-lg sm:hidden">
+                    <p className="text-sm font-semibold text-gray-900">
+                        {chartData[activeBar].fullName}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                        Accuracy: {chartData[activeBar].accuracy.toFixed(1)}%
+                    </p>
+                    <button 
+                        onClick={() => setActiveBar(null)}
+                        className="mt-2 text-xs text-primary-600 underline"
+                    >
+                        Dismiss
+                    </button>
+                </div>
+            )}
 
             <AccuracyLegend />
         </div>

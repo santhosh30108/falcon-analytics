@@ -287,10 +287,10 @@ export default function FalconPage() {
             {/* Floating AI Assistant Button */}
             <button
                 onClick={() => setIsAIPopupOpen(true)}
-                className="fixed bottom-6 right-6 w-14 h-14 gemini-button text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center z-50 group"
+                className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 gemini-button text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center z-50 group"
                 title="AI Assistant"
             >
-                <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
             </button>
 
             {/* AI Assistant Popup */}
@@ -304,8 +304,8 @@ export default function FalconPage() {
                         className={`fixed z-[100] transition-all duration-500 ease-in-out rounded-2xl overflow-hidden
                             ${
                                 messages.length > 0
-                                    ? 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-3xl h-[80vh]'
-                                    : 'bottom-24 right-6 w-96 h-[500px]'
+                                    ? 'inset-3 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[90vw] sm:max-w-3xl sm:h-[80vh]'
+                                    : 'inset-3 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-96 sm:h-[500px]'
                             }`}
                     >
                         <div className="gemini-border-wrapper h-full w-full">
@@ -387,7 +387,7 @@ export default function FalconPage() {
                                             }
                                         }}
                                         placeholder="Ask a question..."
-                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none h-20 pr-12"
+                                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none h-16 sm:h-20 pr-12"
                                     />
                                     <button
                                         onClick={handleAskAI}

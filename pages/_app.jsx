@@ -43,13 +43,13 @@ export default function App({ Component, pageProps }) {
         </div>
         
         {/* Prototype Watermark */}
-        <div className="fixed bottom-6 left-6 md:left-72 z-[9999] pointer-events-none">
-          <div className="bg-white/95 backdrop-blur-md border border-red-200 text-red-600 px-4 py-2.5 rounded-full shadow-xl shadow-red-100/50 text-xs font-bold flex items-center gap-2.5 transition-all relative pointer-events-auto hover:scale-105">
-            <span className="relative flex h-2.5 w-2.5">
+        <div className="fixed bottom-2 sm:bottom-6 left-3 sm:left-6 md:left-72 right-3 sm:right-auto z-[9999] pointer-events-none">
+          <div className="bg-white/95 backdrop-blur-md border border-red-200 text-red-600 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full shadow-xl shadow-red-100/50 text-xs font-bold flex items-center gap-2 sm:gap-2.5 transition-all relative pointer-events-auto hover:scale-105">
+            <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5 flex-shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-red-500"></span>
             </span>
-            <span className="tracking-wide uppercase text-[10px] sm:text-xs">This is a prototype - Contact admin for actual feature</span>
+            <span className="tracking-wide uppercase text-[9px] sm:text-[10px] md:text-xs line-clamp-1">Prototype view | Full feature in Bitbucket</span>
           </div>
         </div>
       </ErrorBoundary>

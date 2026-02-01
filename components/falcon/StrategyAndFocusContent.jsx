@@ -85,7 +85,7 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
     return (
         <div className="space-y-8">
             {/* 1. Struggling Chapters */}
-            <div className="card border-l-4 border-l-danger-500 bg-gradient-to-r from-danger-50/50 to-white">
+            <div className="card !p-3 sm:!p-6 border-l-4 border-l-danger-500 bg-gradient-to-r from-danger-50/50 to-white">
                 <h3 className="subsection-title text-danger-800 flex items-center gap-2 mb-4">
                     <div className="p-2 bg-danger-100 rounded-lg">
                         <BookOpen className="w-5 h-5 text-danger-600" />
@@ -102,12 +102,12 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
                         strugglingChapters.map((chapter, idx) => (
                             <div
                                 key={idx}
-                                className="p-4 bg-white rounded-xl border border-danger-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-between group"
+                                className="p-3 sm:p-4 bg-white rounded-xl border border-danger-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-2 sm:gap-3 group"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="w-1.5 h-12 bg-danger-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="hidden sm:block w-1.5 h-12 bg-danger-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     <div>
-                                        <h4 className="font-bold text-gray-900">
+                                        <h4 className="font-bold text-gray-900 text-sm sm:text-base">
                                             {chapter.chapter}
                                         </h4>
                                         <p className="text-xs text-gray-500 mt-0.5">
@@ -115,7 +115,7 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
                                         </p>
                                     </div>
                                 </div>
-                                <span className="px-3 py-1 bg-danger-50 text-danger-700 text-sm font-bold rounded-lg border border-danger-100">
+                                <span className="self-start xl:self-auto px-3 py-1 bg-danger-50 text-danger-700 text-xs sm:text-sm font-bold rounded-lg border border-danger-100">
                                     {chapter.accuracy.toFixed(1)}% Accuracy
                                 </span>
                             </div>
@@ -129,7 +129,7 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
             </div>
 
             {/* 2. Critical Topics */}
-            <div className="card border-l-4 border-l-warning-500 bg-gradient-to-r from-warning-50/50 to-white">
+            <div className="card !p-3 sm:!p-6 border-l-4 border-l-warning-500 bg-gradient-to-r from-warning-50/50 to-white">
                 <h3 className="subsection-title text-warning-800 flex items-center gap-2 mb-4">
                     <div className="p-2 bg-warning-100 rounded-lg">
                         <Target className="w-5 h-5 text-warning-600" />
@@ -146,17 +146,17 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
                         criticalTopics.map((topic, idx) => (
                             <div
                                 key={idx}
-                                className="p-4 bg-white border border-warning-200 rounded-xl shadow-sm hover:shadow-md hover:border-warning-300 transition-all duration-200 flex items-center justify-between group"
+                                className="p-3 sm:p-4 bg-white border border-warning-200 rounded-xl shadow-sm hover:shadow-md hover:border-warning-300 transition-all duration-200 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-2 sm:gap-3 group"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="w-1.5 h-10 bg-warning-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="hidden sm:block w-1.5 h-10 bg-warning-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     <div className="flex flex-col">
                                         <h4 className="font-semibold text-gray-900 text-sm">
                                             {topic.topic}
                                         </h4>
                                     </div>
                                 </div>
-                                <span className="px-3 py-1 bg-warning-50 text-warning-700 text-xs font-bold rounded-lg border border-warning-100 whitespace-nowrap">
+                                <span className="self-start xl:self-auto px-3 py-1 bg-warning-50 text-warning-700 text-xs font-bold rounded-lg border border-warning-100 whitespace-nowrap">
                                     {topic.accuracy.toFixed(1)}% Accuracy
                                 </span>
                             </div>
@@ -170,7 +170,7 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
             </div>
 
             {/* 3. Time-Intensive Chapters */}
-            <div className="card border-l-4 border-l-purple-500 bg-gradient-to-r from-purple-50/50 to-white">
+            <div className="card !p-3 sm:!p-6 border-l-4 border-l-purple-500 bg-gradient-to-r from-purple-50/50 to-white">
                 <h3 className="subsection-title text-purple-800 flex items-center gap-2 mb-4">
                     <div className="p-2 bg-purple-100 rounded-lg">
                         <AlertTriangle className="w-5 h-5 text-purple-600" />
@@ -187,23 +187,21 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
                         timeIntensiveChapters.map((chapter, idx) => (
                             <div
                                 key={idx}
-                                className="p-4 bg-white rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-between group"
+                                className="p-3 sm:p-4 bg-white rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-2 sm:gap-3 group"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="w-1.5 h-12 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="hidden sm:block w-1.5 h-12 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     <div>
-                                        <h4 className="font-bold text-gray-900">
+                                        <h4 className="font-bold text-gray-900 text-sm sm:text-base">
                                             {chapter.chapter}
                                         </h4>
                                         <p className="text-xs text-gray-500 mt-0.5">
-                                            {chapter.accuracy.toFixed(1)}%
-                                            Accuracy
+                                            {chapter.accuracy.toFixed(1)}% Accuracy
                                         </p>
                                     </div>
                                 </div>
-                                <span className="px-3 py-1 bg-purple-50 text-purple-700 text-sm font-bold rounded-lg border border-purple-100">
-                                    ⏱ {Number(chapter.timeSpent).toFixed(1)}s
-                                    avg
+                                <span className="self-start xl:self-auto px-3 py-1 bg-purple-50 text-purple-700 text-xs sm:text-sm font-bold rounded-lg border border-purple-100">
+                                    ⏱ {Number(chapter.timeSpent).toFixed(1)}s avg
                                 </span>
                             </div>
                         ))
@@ -216,7 +214,7 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
             </div>
 
             {/* 4. Slow Topics */}
-            <div className="card border-l-4 border-l-pink-500 bg-gradient-to-r from-pink-50/50 to-white">
+            <div className="card !p-3 sm:!p-6 border-l-4 border-l-pink-500 bg-gradient-to-r from-pink-50/50 to-white">
                 <h3 className="subsection-title text-pink-800 flex items-center gap-2 mb-4">
                     <div className="p-2 bg-pink-100 rounded-lg">
                         <Target className="w-5 h-5 text-pink-600" />
@@ -233,17 +231,17 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
                         slowTopics.map((topic, idx) => (
                             <div
                                 key={idx}
-                                className="p-4 bg-white border border-pink-200 rounded-xl shadow-sm hover:shadow-md hover:border-pink-300 transition-all duration-200 flex items-center justify-between group"
+                                className="p-3 sm:p-4 bg-white border border-pink-200 rounded-xl shadow-sm hover:shadow-md hover:border-pink-300 transition-all duration-200 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-2 sm:gap-3 group"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="w-1.5 h-10 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="hidden sm:block w-1.5 h-10 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     <div className="flex flex-col">
                                         <h4 className="font-semibold text-gray-900 text-sm">
                                             {topic.topic}
                                         </h4>
                                     </div>
                                 </div>
-                                <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-bold rounded-lg border border-pink-100 whitespace-nowrap">
+                                <span className="self-start xl:self-auto px-3 py-1 bg-pink-50 text-pink-700 text-xs font-bold rounded-lg border border-pink-100 whitespace-nowrap">
                                     ⏱ {Number(topic.timeSpent).toFixed(1)}s avg
                                 </span>
                             </div>
