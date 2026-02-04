@@ -66,7 +66,8 @@ export default function FalconPage() {
 
         // Add user message to history
         const userMessage = { role: 'user', content: prompt }
-        setMessages((prev) => [...prev, userMessage])
+        const updatedMessages = [...messages, userMessage]
+        setMessages(updatedMessages)
         setPrompt('')
 
         // Prepare context data for AI
@@ -80,6 +81,7 @@ export default function FalconPage() {
         askAI(
             {
                 message: prompt,
+                history: updatedMessages, // Pass full conversation history
                 context: contextData,
             },
             {

@@ -279,31 +279,29 @@ function formatChatReply(entry) {
 }
 
 /**
- * Mock mutation hook for AI assistant chat.
+ * Mutation hook for AI assistant chat using real Azure OpenAI API.
  * Provides the same surface area as react-query's useMutation: { mutate, isPending }.
  */
 export const useAIAssistant = () => {
     const [isPending, setIsPending] = useState(false)
 
     const mutate = async (payload, opts = {}) => {
-        const message = (payload?.message || '').toString().toLowerCase()
         setIsPending(true)
         try {
-            await delay(700)
-
-            const keys = Object.keys(chatResponses || {})
-            const matchedKey =
-                keys.find((k) => message.includes(k)) ||
-                (message.includes('weak') ? 'weakest topics' : null) ||
-                (message.includes('tricky') ? 'trickiest questions' : null) ||
-                (message.includes('improve') ? 'improvement areas' : null)
-
-            const reply =
-                formatChatReply(chatResponses?.[matchedKey]) ||
-                "I'm here to help. Try asking: “weakest topics”, “trickiest questions”, or “improvement areas”."
-
-            opts?.onSuccess?.({ reply })
+            const response = await fetch('/api/ai-assistant', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            })
+            
+            if (!response.ok) {
+                throw new Error(`API error: ${response.status}`)
+            }
+            
+            const data = await response.json()
+            opts?.onSuccess?.(data)
         } catch (e) {
+            console.error('AI Assistant error:', e)
             opts?.onError?.(e)
         } finally {
             setIsPending(false)
@@ -312,4 +310,3 @@ export const useAIAssistant = () => {
 
     return { mutate, isPending }
 }
-
