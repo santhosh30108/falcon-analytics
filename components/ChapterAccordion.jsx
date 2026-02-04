@@ -36,7 +36,7 @@ export default function ChapterAccordion({ chapter, topics }) {
           <div className={`w-3 h-3 rounded-full flex-shrink-0 ${getAccuracyColor(avgAccuracy)}`}></div>
           
           <div className="text-left flex-1 min-w-0">
-            <h3 className="text-sm sm:text-base font-semibold text-gray-900 truncate">{chapter}</h3>
+            <h3 className="text-sm sm:text-base font-semibold text-gray-900 truncate text-wrap">{chapter}</h3>
             <p className="text-xs text-gray-500 mt-0.5">{topics.length} topics</p>
           </div>
         </div>

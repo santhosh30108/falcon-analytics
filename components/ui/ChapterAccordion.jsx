@@ -45,7 +45,7 @@ export default function ChapterAccordion({ chapter, topics, chapterAccuracy }) {
                     ></div>
 
                     <div className="text-left flex-1 min-w-0">
-                        <h3 className="text-sm sm:text-base font-semibold text-gray-900 truncate">
+                        <h3 className="text-sm sm:text-base font-semibold text-gray-900 truncate text-wrap">
                             {chapter}
                         </h3>
                         <p className="text-xs text-gray-500 mt-0.5">
