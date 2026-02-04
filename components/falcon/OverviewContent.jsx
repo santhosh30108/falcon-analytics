@@ -127,12 +127,13 @@ export default function OverviewContent({ selectedBatch }) {
     const topChapters =
         Array.isArray(chapterPerformance) &&
         [...chapterPerformance]
+            .filter((c) => c.accuracy >= 70)
             .sort((a, b) => b.accuracy - a.accuracy)
             .slice(0, 3)
     const needsAttentionChapters =
         Array.isArray(chapterPerformance) &&
         [...chapterPerformance]
-            .filter((c) => c.accuracy < 60)
+            .filter((c) => c.accuracy < 55)
             .sort((a, b) => a.accuracy - b.accuracy)
             .slice(0, 3)
 
@@ -189,13 +190,13 @@ export default function OverviewContent({ selectedBatch }) {
                     <MetricCard
                         label="Avg Test Score"
                         value={batchOverview?.averageScore}
-                        unit="%"
-                        trend={batchOverview?.trend.score}
-                        subtitle="Last 5 tests"
+                        unit=""
+                        // trend={batchOverview?.trend.score}
+                        subtitle="Last 2 tests"
                         tooltip={{
                             title: 'Average Test Score',
                             description:
-                                'The mean score across all students in the batch over the last 5 tests.',
+                                'The mean score across all students in the batch over the last 2 tests.',
                             formula: '= (Sum of all scores) / (Total students)',
                         }}
                     />
@@ -204,7 +205,7 @@ export default function OverviewContent({ selectedBatch }) {
                         value={batchOverview?.accuracyPercentage}
                         unit="%"
                         trend={batchOverview?.trend.accuracy}
-                        subtitle="Last 5 tests"
+                        subtitle="Last 2 tests"
                         tooltip={{
                             title: 'Accuracy Rate',
                             description:
@@ -218,7 +219,7 @@ export default function OverviewContent({ selectedBatch }) {
                         value={batchOverview?.attemptRate}
                         unit="%"
                         trend={batchOverview?.trend.attemptRate}
-                        subtitle="Last 5 tests"
+                        subtitle="Last 2 tests"
                         tooltip={{
                             title: 'Attempt Rate',
                             description:
@@ -300,7 +301,7 @@ export default function OverviewContent({ selectedBatch }) {
                                 </ul>
                             ) : (
                                 <p className="text-gray-500 text-sm py-2">
-                                    No data yet.
+                                    No chapters above 70%.
                                 </p>
                             )}
                         </div>
@@ -341,7 +342,7 @@ export default function OverviewContent({ selectedBatch }) {
                                 </ul>
                             ) : (
                                 <p className="text-gray-500 text-sm py-2">
-                                    No chapters below 60%.
+                                    No chapters below 55%.
                                 </p>
                             )}
                         </div>

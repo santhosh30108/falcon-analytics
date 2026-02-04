@@ -57,14 +57,14 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
     // Accuracy-based filters
     const strugglingChapters = Array.isArray(chapterPerformance)
         ? [...chapterPerformance]
-              .filter((c) => c.accuracy < 70)
+              .filter((c) => c.accuracy < 55)
               .sort((a, b) => a.accuracy - b.accuracy)
         : []
     const criticalTopics =
         topicBreakdown && typeof topicBreakdown === 'object' && !Array.isArray(topicBreakdown)
             ? Object.values(topicBreakdown)
                   .flat()
-                  .filter((t) => t.accuracy < 70)
+                  .filter((t) => t.accuracy < 55)
                   .sort((a, b) => a.accuracy - b.accuracy)
             : []
 
@@ -94,7 +94,7 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
                     <SectionTooltip
                         title="Struggling Chapters"
                         description="Chapters where students are underperforming and need additional focus and revision sessions."
-                        criteria="Accuracy less than 70%"
+                        criteria="Accuracy less than 55%"
                     />
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -138,7 +138,7 @@ export default function StrategyAndFocusContent({ selectedBatch }) {
                     <SectionTooltip
                         title="Critical Topics"
                         description="Individual topics within chapters that students find challenging. These specific areas need targeted teaching attention."
-                        criteria="Accuracy less than 70%"
+                        criteria="Accuracy less than 55%"
                     />
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
