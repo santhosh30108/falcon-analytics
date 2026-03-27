@@ -268,7 +268,7 @@ export default function FalconPage() {
 
       {/* Floating AI Assistant Button */}
       <button
-        onClick={setIsAIPopupOpen(true)}
+        onClick={() => setIsAIPopupOpen(true)}
         className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 gemini-button text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center z-50 group"
         title="AI Assistant"
       >
